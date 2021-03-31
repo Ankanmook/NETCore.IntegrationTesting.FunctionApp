@@ -1,0 +1,1 @@
+# NETCore.IntegrationTesting.FunctionApp
