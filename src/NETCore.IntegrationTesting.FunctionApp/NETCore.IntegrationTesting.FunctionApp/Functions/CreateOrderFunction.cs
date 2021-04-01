@@ -37,7 +37,7 @@ namespace NETCore.IntegrationTesting.FunctionApp.Functions
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "CreateOrder")]
             HttpRequest req, ILogger log)
         {
-            log.LogInformation("Received a create order request");
+            log?.LogInformation("Received a create order request");
 
             var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             if (string.IsNullOrWhiteSpace(requestBody))
@@ -45,8 +45,8 @@ namespace NETCore.IntegrationTesting.FunctionApp.Functions
                 return new BadRequestObjectResult("Request is empty");
             }
 
-            log.LogInformation("Request body");
-            log.LogInformation(requestBody);
+            log?.LogInformation("Request body");
+            log?.LogInformation(requestBody);
 
 
             var request = JsonConvert.DeserializeObject<CreateOrderRequest>(requestBody);

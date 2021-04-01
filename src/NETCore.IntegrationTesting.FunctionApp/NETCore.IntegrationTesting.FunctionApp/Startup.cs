@@ -36,8 +36,8 @@ namespace NETCore.IntegrationTesting.FunctionApp
 
             Configuration = new ConfigurationBuilder()
                 .SetBasePath(executionContextOptions.AppDirectory)
-                .AddJsonFile("appsettings.json")
-                .AddJsonFile("appsettings.Development.json", optional: true)
+                //.AddJsonFile("appsettings.json")
+                //.AddJsonFile("appsettings.Development.json", optional: true)
                 .AddEnvironmentVariables()
                 .Build();
         }
