@@ -15,11 +15,11 @@ using Xunit;
 namespace NETCore.IntegrationTesting.FunctionApp.IntegrationTests
 {
     [Collection(TestsCollection.Name)]
-    public class OrderCreationSubcutaneousTests
+    public class OrderCreationTests
     {
         private readonly CreateOrderFunction _sut;
 
-        public OrderCreationSubcutaneousTests(TestHost testHost)
+        public OrderCreationTests(TestHost testHost)
         {
             _sut = new CreateOrderFunction(testHost.ServiceProvider.GetRequiredService<IOrderProcessor>());
         }
